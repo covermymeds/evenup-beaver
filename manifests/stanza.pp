@@ -37,6 +37,12 @@
 #   String of field,value sets to add
 #   Value is the add_field config value from beaver.conf. 
 #
+# [*multiline_regex_before*]
+#   regexp value sent to multiline_regex_before config in beaver.conf
+#
+# [*multiline_regex_after*]
+#   regexp value sent to multiline_regex_after config in beaver.conf
+#
 # === Authors
 #
 # * Justin Lambert <mailto:jlambert@letsevenup.com>
@@ -50,6 +56,8 @@ define beaver::stanza (
   $format                 = undef,
   $exclude                = [],
   $add_field              = undef,
+  $multiline_regex_before = undef,
+  $multiline_regex_after  = undef,
   $sincedb_write_interval = 300,
 ){
 

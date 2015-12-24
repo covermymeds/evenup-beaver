@@ -24,6 +24,10 @@ exclude: (<%= @exclude.join('|') %>)
 exclude: (<%= @exclude %>)
 <% elsif @add_field.is_a?(String) -%>
 add_field: (<%= @add_field %>)
+<% elsif @multiline_regex_before.is_a?(String) -%>
+multiline_regex_before: (<%= @multiline_regex_before %>)
+<% elsif @multiline_regex_after.is_a?(String) -%>
+multiline_regex_after: (<%= @multiline_regex_after %>)
 <% end -%>
 <% end -%>
 
