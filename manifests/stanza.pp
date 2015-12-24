@@ -33,6 +33,10 @@
 #   String/Array of strings.  Valid python regex strings to exlude
 #   from file globs.
 #
+# [*add_field*]
+#   String of field,value sets to add
+#   Value is the add_field config value from beaver.conf. 
+#
 # === Authors
 #
 # * Justin Lambert <mailto:jlambert@letsevenup.com>
@@ -45,6 +49,7 @@ define beaver::stanza (
   $redis_namespace        = undef,
   $format                 = undef,
   $exclude                = [],
+  $add_field              = undef,
   $sincedb_write_interval = 300,
 ){
 

@@ -22,6 +22,8 @@ sincedb_write_interval: <%= scope.lookupvar('sincedb_write_interval') %>
 exclude: (<%= @exclude.join('|') %>)
 <% elsif @exclude.is_a?(String) -%>
 exclude: (<%= @exclude %>)
+<% elsif @add_field.is_a?(String) -%>
+add_field: (<%= @add_field %>)
 <% end -%>
 <% end -%>
 
