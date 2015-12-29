@@ -1,7 +1,15 @@
+<% 
+  if @provider == 'virtualenv' 
+    bin_path = '/home/beaver/venv/bin/beaver'
+  else
+    bin_path = '/home/beaver/venv/bin/beaver'
+  end
+  
+-%>
 [Unit]
 Description=Beaver log muncher for logstash
 
 [Service]
-ExecStart=/usr/local/bin/beaver -c /etc/beaver/beaver.conf -t redis -l /var/log/beaver.log $BEAVER_OPTIONS
+ExecStart=<%= bin_path %> -c /etc/beaver/beaver.conf -t redis -l /var/log/beaver.log $BEAVER_OPTIONS
 Restart=on-failure
 KillMode=process

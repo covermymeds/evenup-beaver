@@ -22,12 +22,14 @@ sincedb_write_interval: <%= scope.lookupvar('sincedb_write_interval') %>
 exclude: (<%= @exclude.join('|') %>)
 <% elsif @exclude.is_a?(String) -%>
 exclude: (<%= @exclude %>)
-<% elsif @add_field.is_a?(String) -%>
-add_field: (<%= @add_field %>)
-<% elsif @multiline_regex_before.is_a?(String) -%>
-multiline_regex_before: (<%= @multiline_regex_before %>)
-<% elsif @multiline_regex_after.is_a?(String) -%>
-multiline_regex_after: (<%= @multiline_regex_after %>)
 <% end -%>
 <% end -%>
-
+<% if @add_field.is_a?(String) -%>
+add_field: <%= @add_field %>
+<% end -%>
+<% if @multiline_regex_before.is_a?(String) -%>
+multiline_regex_before: <%= @multiline_regex_before %>
+<% end -%>
+<% if @multiline_regex_after.is_a?(String) -%>
+multiline_regex_after: <%= @multiline_regex_after %>
+<% end -%>
